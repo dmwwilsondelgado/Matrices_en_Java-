@@ -16,7 +16,9 @@ public class NewClass3 {
     
     public void Diagonal (){
         for (int i = 0; i< Numbers.length;i++){
-        
+            for(int j = 0; j< Numbers.length;i++){
+                /** Aca resolver */
+            }
         }
     } 
   
