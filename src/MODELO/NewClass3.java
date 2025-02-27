@@ -4,33 +4,45 @@
  */
 package MODELO;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Propietario
  */
 
 public class NewClass3 {
-    private int[][] matriz = {
-        {23, 45, 68},
-        {25, 9, 12},
-        {25, 78, 89}
-    };
+    int[][] Numbers = new int[3][3];
+    
+    public void Diagonal (){
+        for (int i = 0; i< Numbers.length;i++){
+        
+        }
+    } 
+  
+    public NewClass3(int filas, int columnas) {
+         Numbers = new int[filas][columnas];
+    }
 
-    public String encontrarMaximo() {
-        int maximo = matriz[0][0];
-        int filaMax = 0;
-        int columnaMax = 0;
-
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if (matriz[i][j] > maximo) {
-                    maximo = matriz[i][j];
-                    filaMax = i;
-                    columnaMax = j;
-                }
+    public void llenarMatriz() {
+        for (int i = 0; i < Numbers.length; i++) {
+            for (int j = 0; j < Numbers[i].length; j++) {
+                String input = JOptionPane.showInputDialog(null,
+                        "Ingrese el valor para [" + i + "][" + j + "]:",
+                        "Ingreso de Datos", JOptionPane.QUESTION_MESSAGE);
+                Numbers[i][j] = Integer.parseInt(input);
             }
         }
+    }
 
-        return "El valor máximo es: " + maximo + "\nSe encuentra en la posición: [" + filaMax + "][" + columnaMax + "]";
+    public String mostrarMatriz() {
+        StringBuilder resultado = new StringBuilder("Matriz ingresada:\n");
+        for (int[] fila : Numbers) {
+            for (int num : fila) {
+                resultado.append(num).append("\t");
+            }
+            resultado.append("\n");
+        }
+        return resultado.toString();
     }
 }
