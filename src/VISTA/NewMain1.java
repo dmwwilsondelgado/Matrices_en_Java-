@@ -17,7 +17,7 @@ public class NewMain1 {
     public static void main(String[] args) {
         int filas = 3;
         int columnas = 5;
-        
+    
         NewClass1 matriz = new NewClass1(filas, columnas);
         matriz.llenarMatriz();
         JOptionPane.showMessageDialog(null, matriz.mostrarMatriz(), "Matriz", JOptionPane.INFORMATION_MESSAGE);

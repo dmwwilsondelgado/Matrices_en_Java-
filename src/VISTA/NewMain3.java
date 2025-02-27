@@ -15,7 +15,9 @@ import MODELO.NewClass2;
  */
 public class NewMain3 {
     public static void main(String[] args) {
-        NewClass2 matriz = new NewClass2();
-        JOptionPane.showMessageDialog(null, matriz.encontrarMaximo(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        NewClass2 obj = new NewClass2();
+        JOptionPane.showMessageDialog(null, obj.encontrarMaximo(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        //dataType[][] arrayName = new dataType[rows][columns];
+        int[][] matriz = new int[3][3];
     }
 }
