@@ -6,8 +6,7 @@ package VISTA;
  */
 
 import javax.swing.JOptionPane;
-import MODELO.NewClass2;
-
+import MODELO.NewClass3;
 /**
  *
  * @author Propietario
@@ -15,9 +14,20 @@ import MODELO.NewClass2;
  */
 public class NewMain3 {
     public static void main(String[] args) {
-        NewClass2 obj = new NewClass2();
-        JOptionPane.showMessageDialog(null, obj.encontrarMaximo(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-        //dataType[][] arrayName = new dataType[rows][columns];
-        int[][] matriz = new int[3][3];
+        /**
+         *         NewClass3 obj = new NewClass3();
+         *         JOptionPane.showMessageDialog(null, obj.encontrarMaximo(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+         *         dataType[][] arrayName = new dataType[rows][columns];
+         *         NewClass1 matriz = new NewClass1(filas, columnas);
+         *         obj.llenarMatriz();
+         *         JOptionPane.showMessageDialog(null, obj.mostrarMatriz(), "Matriz", JOptionPane.INFORMATION_MESSAGE);
+         */
+        NewClass3 obj = new NewClass3();
+        int tamaño = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Tamaño de La Matrix"));
+
+
+        int [][] matriz = obj.generarMatriz(tamaño);
+        obj.mostrarMatriz(matriz);
+
     }
 }

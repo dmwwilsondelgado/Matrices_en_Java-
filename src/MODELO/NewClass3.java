@@ -4,7 +4,7 @@
  */
 package MODELO;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -12,39 +12,23 @@ import javax.swing.JOptionPane;
  */
 
 public class NewClass3 {
-    int[][] Numbers = new int[3][3];
-    
-    public void Diagonal (){
-        for (int i = 0; i< Numbers.length;i++){
-            for(int j = 0; j< Numbers.length;i++){
-                /** Aca resolver */
-            }
+
+    public int[][] generarMatriz(int tamaño ){
+        int[][] matriz = new int [tamaño][tamaño];
+        for (int i = 0; i < tamaño; i ++){
+            matriz[i][i] = 1;
         }
-    } 
-  
-    public NewClass3(int filas, int columnas) {
-         Numbers = new int[filas][columnas];
+        return matriz;
     }
 
-    public void llenarMatriz() {
-        for (int i = 0; i < Numbers.length; i++) {
-            for (int j = 0; j < Numbers[i].length; j++) {
-                String input = JOptionPane.showInputDialog(null,
-                        "Ingrese el valor para [" + i + "][" + j + "]:",
-                        "Ingreso de Datos", JOptionPane.QUESTION_MESSAGE);
-                Numbers[i][j] = Integer.parseInt(input);
-            }
-        }
-    }
-
-    public String mostrarMatriz() {
-        StringBuilder resultado = new StringBuilder("Matriz ingresada:\n");
-        for (int[] fila : Numbers) {
-            for (int num : fila) {
-                resultado.append(num).append("\t");
+    public void mostrarMatriz(int[][]matriz){
+        StringBuilder resultado = new StringBuilder("Matriz generada \n");
+        for (int[] fila : matriz){
+            for (int elemento :fila){
+                resultado.append(elemento).append("");
             }
             resultado.append("\n");
         }
-        return resultado.toString();
+        JOptionPane.showMessageDialog(null, resultado.toString());
     }
 }
