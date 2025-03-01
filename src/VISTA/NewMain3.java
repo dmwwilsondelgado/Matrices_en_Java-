@@ -28,6 +28,5 @@ public class NewMain3 {
 
         int [][] matriz = obj.generarMatriz(tamaño);
         obj.mostrarMatriz(matriz);
-
     }
 }
