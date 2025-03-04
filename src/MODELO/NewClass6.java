@@ -13,14 +13,14 @@ import javax.swing.*;
 public class NewClass6 {
     private int [][] matriz;
     private int n ; // tamaño de la matriz
-    public NewClass6(int n ){
-        if ( this.n == n ){
-            this.matriz = new int[n][n];
+    //public NewClass6(int n ){
+        //if ( this.n == n ){
+            //this.matriz = new int[n][n];
 
-        }else {
-            return;
-        }
-    }
+        //}else {
+            //return;
+        //}
+    //}
     //public NewdClass6{
         //this.n
         //this.matriz = new int[n][n];
@@ -64,42 +64,7 @@ public class NewClass6 {
 
 
 
-
-
-
-    // Con Ia Intentamos Usar Try Cath Para Corregir errroes
-    public static int obtenerTamañoMatriz() {
-        int tamaño = 0;
-        boolean entradaValida = false;
-        while (!entradaValida) {
-            String input = JOptionPane.showInputDialog(null,
-                    "Ingrese el tamaño de la matriz (N x N):",
-                    "Tamaño de la Matriz",
-                    JOptionPane.QUESTION_MESSAGE);
-            try {
-                tamaño = Integer.parseInt(input);
-                if (tamaño > 0) {
-                    entradaValida = true;
-                } else {
-                    JOptionPane.showMessageDialog(null,
-                            "Por favor, ingrese un número positivo.",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "Entrada inválida. Por favor, ingrese un número entero.",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            } catch (NullPointerException e) {
-                System.exit(0); // Manejar el caso en que el usuario cancela el diálogo
-            }
-        }
-        return tamaño;
-    }
-
-
-    public static void llenarMatriz(int[][] matriz, int n) {
+    public void llenarMatriz(int[][] matriz, int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 boolean entradaValida = false;
