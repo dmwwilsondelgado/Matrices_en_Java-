@@ -16,18 +16,28 @@ import MODELO.NewClass5;
 
 public class NewMain5 {
     public static void main(String[] args) {
-        NewClass5 modelo = new NewClass5();
-        int[] vector = modelo.generarVector();
+        NewClass5 obj = new NewClass5(100);
 
-        modelo.mostrarVector(vector, "Vector Original:");
+        //generamos un vector con numeros aletorios en este
+        obj.generarVector();
 
-        int[] vectorSelection = vector.clone();
-        modelo.selectionSort(vectorSelection);
-        modelo.mostrarVector(vectorSelection, "Ordenado con SelectionSort:");
+        // Mostrar el vector original en consola
+        obj.mostrarVector("Vector Original:");
 
-        int[] vectorQuick = vector.clone();
-        modelo.quickSort(vectorQuick, 0, vectorQuick.length - 1);
-        modelo.mostrarVector(vectorQuick, "Ordenado con QuickSort:");
+        // Crear una copia del vector para Selection Sort y ordenarlo
+        int[] vectorSelection = obj.getVector();
+        NewClass5 objSelection = new NewClass5(100);
+        objSelection.setVector(vectorSelection);
+        objSelection.selectionSort();
+        objSelection.mostrarVector("Ordenado con Selection Sort:");
+
+        // Crear una copia del vector para QuickSort y ordenarlo
+        int[] vectorQuick = obj.getVector();
+        NewClass5 objQuick = new NewClass5(100);
+        objQuick.setVector(vectorQuick);
+        objQuick.quickSort(0, vectorQuick.length - 1);
+        objQuick.mostrarVector("Ordenado con Quick Sort:");
+
     }
 }
 
